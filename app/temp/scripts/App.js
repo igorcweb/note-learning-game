@@ -42,31 +42,32 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
-	var note = "";
-	var imgSrc = "";
-	var reg = 0;
-	var noteNumber = 0;
-	var notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-	var trebleButton = $('.treble');
-	var bassButton = $('.bass');
-	var bothButton = $('.both');
-	var easyButton = $('#easy');
-	var mediumButton = $('#medium');
-	var hardButton = $('#hard');
-	var noteButton = $('.note-button > .button__task');
-	var regButton = $('.reg-button > .button__task');
-	var winTrack = "";
-	var score = 0;
-	var scoreDisplay = $('h1 span#score');
-	var noteTrack = [];
-	var maxNotes = 0;
-	var counter = 0;
-	var hamburger = $('.hamburger');
-	var cross = $('.cross');
+	var note = "",
+	    imgSrc = "",
+	    reg = 0,
+	    noteNumber = 0,
+	    notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+	    trebleButton = $('.treble'),
+	    bassButton = $('.bass'),
+	    bothButton = $('.both'),
+	    easyButton = $('#easy'),
+	    mediumButton = $('#medium'),
+	    hardButton = $('#hard'),
+	    noteButton = $('.note-button > .button__task'),
+	    regButton = $('.reg-button > .button__task'),
+	    winTrack = "",
+	    score = 0,
+	    scoreDisplay = $('h1 span#score'),
+	    noteTrack = [],
+	    maxNotes = 0,
+	    counter = 0,
+	    hamburger = $('.hamburger'),
+	    cross = $('.cross'),
+	    year = $('footer p span');
 
 	generateTreble();
 
@@ -381,10 +382,12 @@
 			}
 		});
 	});
+	//
+	year.text = new Date().getFullYear();
 
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-/***/ }
+/***/ })
 /******/ ]);
