@@ -1,26 +1,27 @@
 "use strict"
 
-var note = "";
-var imgSrc = "";
-var reg = 0;
-var noteNumber = 0
-var notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-var trebleButton = $('.treble');
-var bassButton = $('.bass');
-var bothButton = $('.both');
-var easyButton = $('#easy');
-var mediumButton = $('#medium');
-var hardButton = $('#hard');
-var noteButton = $('.note-button > .button__task');
-var regButton = $('.reg-button > .button__task');
-var winTrack = "";
-var score = 0;
-var scoreDisplay = $('h1 span#score');
-var noteTrack = [];
-var maxNotes = 0
-var counter = 0
-var hamburger = $('.hamburger');
-var cross = $('.cross');
+let note      = "",
+imgSrc        = "",
+reg           = 0,
+noteNumber    = 0,
+notes         = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+trebleButton  = $('.treble'),
+bassButton    = $('.bass'),
+bothButton    = $('.both'),
+easyButton    = $('#easy'),
+mediumButton  = $('#medium'),
+hardButton    = $('#hard'),
+noteButton    = $('.note-button > .button__task'),
+regButton     = $('.reg-button > .button__task'),
+winTrack      = "",
+score         = 0,
+scoreDisplay  = $('h1 span#score'),
+noteTrack     = [],
+maxNotes      = 0,
+counter       = 0,
+hamburger     = $('.hamburger'),
+cross         = $('.cross'),
+year = $('span.year');
 
 generateTreble();
 
@@ -51,11 +52,11 @@ function generateTreble() {
 	if (noteTrack.indexOf(note) >= 0) {
 		generateTreble();
 	} else {
-		counter ++;		
+		counter ++;
 		imgSrc = "assets/images/" + note + ".jpg";
 		$('.notes').attr('src', imgSrc);
 		noteTrack.push(note);
-	}	
+	}
 }
 
 function generateBass() {
@@ -85,17 +86,17 @@ function generateBass() {
 	if (noteTrack.indexOf(note) >= 0) {
 		generateBass();
 	} else {
-		counter ++;		
+		counter ++;
 		imgSrc = "assets/images/" + "b" + note + ".jpg";
 		$('.notes').attr('src', imgSrc);
 		noteTrack.push(note);
-		
+
 	}
 }
 
 function generateBoth() {
-	var bothClefs = [generateTreble, generateBass];
-	var i = getRandomInt(0, 1);
+	let bothClefs = [generateTreble, generateBass];
+	let i = getRandomInt(0, 1);
 	bothClefs[i]();
 }
 
@@ -109,7 +110,7 @@ function easyTreble() {
 }
 
 function mediumTreble() {
-	reg = getRandomInt(3, 6); 
+	reg = getRandomInt(3, 6);
 	if (reg === 3) {
 		noteNumber = getRandomInt(5, 6);
 	} else if (reg === 6) {
@@ -142,23 +143,23 @@ function mediumBass() {
 		noteNumber = getRandomInt(0, 6);
 	} else {
 		noteNumber = getRandomInt(0, 2);
-	}	
+	}
 }
 
 function hardBass() {
 	reg = getRandomInt(1, 4);
 	noteNumber = getRandomInt(0, 6);
-	if (reg === 4) {noteNumber = 	
+	if (reg === 4) {noteNumber =
 	getRandomInt(0, 4);
 	}
 }
-	
+
 trebleButton.on('click', function() {
 	winTrack = 0;
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
 	$('.clef').children().removeClass('selected hard medium highlight')
-			  .addClass('easy');
+			      .addClass('easy');
 			 $(this).addClass('selected highlight');
 });
 
@@ -167,8 +168,8 @@ bassButton.on('click', function() {
 	$('div.button__task').css('opacity', '1');
 	generateBass();
 	$('.clef').children().removeClass('selected hard medium highlight')
-			  .addClass('easy');
-			 $(this).addClass('selected highlight');
+			      .addClass('easy');
+	$(this).addClass('selected highlight');
 });
 
 bothButton.on ('click', function() {
@@ -176,8 +177,8 @@ bothButton.on ('click', function() {
 	$('div.button__task').css('opacity', '1');
 	generateBoth();
 	$('.clef').children().removeClass('selected hard medium highlight')
-			  .addClass('easy');
-			 $(this).addClass('selected highlight');
+			      .addClass('easy');
+	$(this).addClass('selected highlight');
 });
 
 easyButton.on('click', function() {
@@ -216,17 +217,17 @@ hardButton.on('click', function() {
 });
 
 function win(){
-		if ((winTrack.indexOf('nr') > 0 || 
-		    winTrack.indexOf('rn') > 0) && 
+		if ((winTrack.indexOf('nr') > 0 ||
+		    winTrack.indexOf('rn') > 0) &&
 		    trebleButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateTreble, 2000);
-} else if  ((winTrack.indexOf('nr') > 0 || 
-		    winTrack.indexOf('rn') > 0) && 
+} else if  ((winTrack.indexOf('nr') > 0 ||
+		    winTrack.indexOf('rn') > 0) &&
 		    bassButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateBass, 2000);
-} else if   ((winTrack.indexOf('nr') > 0 || 
+} else if   ((winTrack.indexOf('nr') > 0 ||
             winTrack.indexOf('rn') > 0) &&
 			bothButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
@@ -240,7 +241,7 @@ noteButton.on('click', function() {
 		$(this).siblings().css('opacity', '0').hide();
 		winTrack += "n";
 		$('.task1').text('Correct!');
-		win();		
+		win();
 	} else {
 		score = 0;
 		// $('.task1').text('Try Again!').css('color', '#e9ebee');
@@ -298,11 +299,11 @@ $('.one-octave > img').each(function(){
 		$('.task4').text('Correct!');
 		win();
 			}
-		});	
+		});
 		} else {
 			$('.task4').text('');
 				setTimeout(function() {
-				$('.task4').text('Try Again!'); 
+				$('.task4').text('Try Again!');
 				}, 200);
 				score = 0;
 				scoreDisplay.text(" " + score);
@@ -317,24 +318,24 @@ $('.keyboard-keys > img').each(function() {
 			$('.task3').text('Correct!');
 			buttonWin();
 			win();
-		
+
 	} else {
 		$('.task3').text('');
 		setTimeout(function() {
-			$('.task3').text('Try Again!') 
+			$('.task3').text('Try Again!')
 			}, 200);
-		
+
 		score = 0;
 		scoreDisplay.text(" " + score);
 	}
-				
+
 	function buttonWin() {
 		$('.note-button > .button').each(function() {
 			if ($(this).context.innerText === note[0]) {
 				$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 				$(this).siblings().css('opacity', '0').hide();
 				winTrack += "n";
-				$('.task1').text('Correct!');	
+				$('.task1').text('Correct!');
 			 }
 		});
 
@@ -344,12 +345,14 @@ $('.keyboard-keys > img').each(function() {
 				$(this).siblings().css('opacity', '0').hide();
 				winTrack += "r";
 				$('.task2').text('Correct!');
-			 
-			   } 
+
+			   }
 		   });
-	    }		
+	    }
 	});
 });
+//
+year[0].innerHTML = (new Date().getFullYear());
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
