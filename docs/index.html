@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <title>Note-Learning Game</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="icon" type="image/jpg" href="assets/images/logo.jpg">
+  <link rel="stylesheet" href="temp/styles/styles.css">
+</head>
+<body class="game">
+<div class="wrapper">
+<div class="top-panel">
+	<h1 class="heading">Note-Learning Game</h1>
+	<h1 class ="score">Streak:<span id="score"> 0</span></h1>
+	<div class="button button__info"><a href="info.html">Game Info</a></div>
+</div>
+<img class="notes" src="" alt="note"> 
+
+<button class="hamburger">&#9776;</button>
+<button class="cross hide">&#735;</button>
+
+<ul class="level">
+	<li class="button button__mode button__mode--level highlight easy" id="easy">Easy</li>
+	<li class="button button__mode button__mode--level" id="medium">Medium</li>
+	<li class="button button__mode button__mode--level" id="hard">Hard</li>
+</ul>
+
+<ul class="clef">
+	<li class="button button__mode button__mode--clef highlight selected treble">Treble</li>
+	<li class="button button__mode button__mode--clef bass">Bass</li>
+	<li class="button button__mode button__mode--clef both">Both</li>
+</ul>
+<div class="relative">
+<div class="container-notereg">
+<h1 class="taskText task1">Pick a Note:</h1>
+	<div class="note-button">
+		<div class="button button__task">A</div>
+		<div class="button button__task">B</div>
+		<div class="button button__task">C</div>
+		<div class="button button__task">D</div>
+		<div class="button button__task">E</div>
+		<div class="button button__task">F</div>
+		<div class="button button__task">G</div>
+	</div>
+		<h1 class="taskText task4">or a Key:</h1>
+		<div class="one-octave">
+			<img class="keys" src="assets/images/keys/C.jpg" alt="C">
+			<img class="keys" src="assets/images/keys/D.jpg" alt="D">
+			<img class="keys" src="assets/images/keys/E.jpg" alt="E">
+			<img class="keys" src="assets/images/keys/C.jpg" alt="F">
+			<img class="keys" src="assets/images/keys/D.jpg" alt="G">
+			<img class="keys" src="assets/images/keys/D.jpg" alt="A">
+			<img class="keys" src="assets/images/keys/E.jpg" alt="B">
+		</div>
+	<h1 class="taskText task2">Pick a Register:</h1>
+		<div class="reg-button">
+		<div class="button button__task">1</div>
+		<div class="button button__task">2</div>
+		<div class="button button__task">3</div>
+		<div class="button button__task">4</div>
+		<div class="button button__task">5</div>
+		<div class="button button__task">6</div>
+		<div class="button button__task">7</div>
+	</div>
+</div> <!-- container notereg --> 
+</div> <!-- relative -->
+
+<div class="keyboard-keys">
+		<h1 class="taskText task3">or Pick a Key:</h1>
+		<img class="keys" src="assets/images/keys/C.jpg" alt="A0">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B0">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C1">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D1">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E1">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F1">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G1">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A1">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B1">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C2">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D2">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E2">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F2">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G2">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A2">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B2">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C3">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D3">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E3">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F3">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G3">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A3">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B3">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C4">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D4">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E4">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F4">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G4">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A4">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B4">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C5">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D5">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E5">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F5">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G5">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A5">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B5">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C6">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D6">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E6">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F6">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G6">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A6">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B6">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="C7">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="D7">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="E7">
+		<img class="keys" src="assets/images/keys/C.jpg" alt="F7">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="G7">
+		<img class="keys" src="assets/images/keys/D.jpg" alt="A7">
+		<img class="keys" src="assets/images/keys/E.jpg" alt="B7">
+		<img class="keys" src="assets/images/keys/highC.jpg" alt="C8">
+	</div>
+
+<footer>
+	<p>Copyright &copy; 2017 IC</p>
+</footer>
+
+<script src="assets/scripts/jquery-2.2.4.min.js"></script>
+<script src="assets/scripts/app.js"></script>
+  </div> <!-- wrapper -->  
+  <div class="warning-message">
+    <h3>This game is only viewable in portrait mode on your device</h1>
+</div>
+</body>
+</html>

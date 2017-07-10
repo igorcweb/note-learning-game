@@ -1,0 +1,23 @@
+.notes {
+	position: absolute;
+	left: 50%;
+	top: 4rem;
+	transform: translateX(-50%);
+	display: block;
+	width: 7rem;
+	height: 8.7rem;
+	border-radius: 5%;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+	@mixin atSmall {
+		width: 8.7rem;
+		height: 10.2rem;
+		top: 4rem;
+	}
+}
+
+
+
+
+
+
