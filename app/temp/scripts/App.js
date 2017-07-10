@@ -67,7 +67,7 @@
 	    counter = 0,
 	    hamburger = $('.hamburger'),
 	    cross = $('.cross'),
-	    year = $('footer p span');
+	    year = $('footer p span.year');
 
 	generateTreble();
 
@@ -383,7 +383,7 @@
 		});
 	});
 	//
-	year.text = new Date().getFullYear();
+	year.text(new Date().getFullYear());
 
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
