@@ -21,7 +21,7 @@ maxNotes      = 0,
 counter       = 0,
 hamburger     = $('.hamburger'),
 cross         = $('.cross'),
-year = $('footer p span.year');
+year          = $('footer p span.year');
 
 generateTreble();
 
