@@ -274,7 +274,7 @@
 	noteButton.on('click', function () {
 		if ($(this).context.innerText === note[0]) {
 			$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
-			$(this).siblings().css('opacity', '0').hide();
+			$(this).siblings().hide();
 			winTrack += "n";
 			$('.task1').text('Correct!');
 			win();
@@ -292,7 +292,7 @@
 	regButton.on('click', function () {
 		if ($(this).context.innerText === note[1]) {
 			$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
-			$(this).siblings().css('opacity', '0').hide();
+			$(this).siblings().hide();
 			winTrack += "r";
 			$('.task2').text('Correct!');
 			win();
@@ -382,7 +382,8 @@
 			}
 		});
 	});
-	//
+
+	//Footer Year
 	year.text(new Date().getFullYear());
 
 	function getRandomInt(min, max) {
