@@ -1,6 +1,6 @@
 "use strict"
 
-let note      = "",
+var note      = "",
 imgSrc        = "",
 reg           = 0,
 noteNumber    = 0,
@@ -95,8 +95,8 @@ function generateBass() {
 }
 
 function generateBoth() {
-	let bothClefs = [generateTreble, generateBass];
-	let i = getRandomInt(0, 1);
+	var bothClefs = [generateTreble, generateBass];
+	var i = getRandomInt(0, 1);
 	bothClefs[i]();
 }
 

@@ -1,6 +1,6 @@
 "use strict"
 
-let note      = "",
+var note      = "",
 imgSrc        = "",
 reg           = 0,
 noteNumber    = 0,
@@ -21,7 +21,7 @@ maxNotes      = 0,
 counter       = 0,
 hamburger     = $('.hamburger'),
 cross         = $('.cross'),
-year = $('footer p span.year');
+year          = $('footer p span.year');
 
 generateTreble();
 
@@ -95,8 +95,8 @@ function generateBass() {
 }
 
 function generateBoth() {
-	let bothClefs = [generateTreble, generateBass];
-	let i = getRandomInt(0, 1);
+	var bothClefs = [generateTreble, generateBass];
+	var i = getRandomInt(0, 1);
 	bothClefs[i]();
 }
 
@@ -238,7 +238,7 @@ function win(){
 noteButton.on('click', function() {
 	if ($(this).context.innerText === note[0]) {
 		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
-		$(this).siblings().css('opacity', '0').hide();
+		$(this).siblings().hide();
 		winTrack += "n";
 		$('.task1').text('Correct!');
 		win();
@@ -257,7 +257,7 @@ noteButton.on('click', function() {
 regButton.on('click', function() {
 	if ($(this).context.innerText === note[1]) {
 		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
-		$(this).siblings().css('opacity', '0').hide();
+		$(this).siblings().hide();
 		winTrack += "r";
 		$('.task2').text('Correct!');
 		win();
@@ -351,7 +351,8 @@ $('.keyboard-keys > img').each(function() {
 	    }
 	});
 });
-//
+
+//Footer Year
 year.text(new Date().getFullYear());
 
 function getRandomInt(min, max) {
