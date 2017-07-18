@@ -33,7 +33,7 @@ function generateTreble() {
 	$('.task3').text('or Pick a Key:');
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
-	winTrack = 0;
+	winTrack = "";
 	if ($('.level').children().hasClass('easy')) {
 		easyTreble(); maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
@@ -67,7 +67,7 @@ function generateBass() {
 	$('.task3').text('or Pick a Key:');
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
-	winTrack = 0;
+	winTrack = "";
 	if ($('.level').children().hasClass('easy')) {
 		easyBass(); maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
@@ -155,16 +155,17 @@ function hardBass() {
 }
 
 trebleButton.on('click', function() {
-	winTrack = 0;
+	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
-	$('.clef').children().removeClass('selected hard medium highlight')
+	$('.clef').children()
+					  .removeClass('selected hard medium highlight')
 			      .addClass('easy');
 			 $(this).addClass('selected highlight');
 });
 
 bassButton.on('click', function() {
-	winTrack = 0;
+	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateBass();
 	$('.clef').children().removeClass('selected hard medium highlight')
@@ -173,7 +174,7 @@ bassButton.on('click', function() {
 });
 
 bothButton.on ('click', function() {
-	winTrack = 0;
+	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateBoth();
 	$('.clef').children().removeClass('selected hard medium highlight')
@@ -217,18 +218,18 @@ hardButton.on('click', function() {
 });
 
 function win(){
-		if ((winTrack.indexOf('nr') > 0 ||
-		    winTrack.indexOf('rn') > 0) &&
+		if ((winTrack.indexOf('nr') >= 0 ||
+		    winTrack.indexOf('rn') >= 0) &&
 		    trebleButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateTreble, 2000);
-} else if  ((winTrack.indexOf('nr') > 0 ||
-		    winTrack.indexOf('rn') > 0) &&
+} else if  ((winTrack.indexOf('nr') >= 0 ||
+		    winTrack.indexOf('rn') >= 0) &&
 		    bassButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateBass, 2000);
-} else if   ((winTrack.indexOf('nr') > 0 ||
-            winTrack.indexOf('rn') > 0) &&
+} else if   ((winTrack.indexOf('nr') >= 0 ||
+            winTrack.indexOf('rn') >= 0) &&
 			bothButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateBoth, 2000);
