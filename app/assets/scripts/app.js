@@ -154,14 +154,14 @@ function hardBass() {
 	}
 }
 
-trebleButton.on('click', function() {
+$('.clef').on('click',trebleButton, function() {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
-	$('.clef').children()
+	$(this).children()
 					  .removeClass('selected hard medium highlight')
 			      .addClass('easy');
-			 $(this).addClass('selected highlight');
+			 trebleButton.addClass('selected highlight');
 });
 
 bassButton.on('click', function() {
