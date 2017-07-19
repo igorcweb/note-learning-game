@@ -13,7 +13,7 @@ mediumButton  = $('#medium'),
 hardButton    = $('#hard'),
 noteButton    = $('.note-button > .button__task'),
 regButton     = $('.reg-button > .button__task'),
-winTrack      = "",
+winner = false,
 score         = 0,
 scoreDisplay  = $('h1 span#score'),
 noteTrack     = [],
@@ -25,6 +25,18 @@ year          = $('footer p span.year');
 
 generateTreble();
 
+function removeWinnerClass() {
+	$('div.note-button').removeClass('winner');
+	$('div.reg-button').removeClass('winner');
+}
+
+function winnerCondition() {
+	return (($('div.note-button').hasClass('winner') ||
+				 $('div.one-octave').hasClass('winner')) &&
+				 $('div.reg-button').hasClass('winner')) ||
+				 $('div.keyboard-keys').hasClass('winner');
+}
+
 function generateTreble() {
 	noteButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
 	regButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
@@ -33,7 +45,8 @@ function generateTreble() {
 	$('.task3').text('or Pick a Key:');
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
-	winTrack = "";
+	winner = false;
+	removeWinnerClass();
 	if ($('.level').children().hasClass('easy')) {
 		easyTreble(); maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
@@ -67,7 +80,8 @@ function generateBass() {
 	$('.task3').text('or Pick a Key:');
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
-	winTrack = "";
+	removeWinnerClass();
+	winner = false;
 	if ($('.level').children().hasClass('easy')) {
 		easyBass(); maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
@@ -155,7 +169,8 @@ function hardBass() {
 }
 
 trebleButton.on('click', function() {
-	winTrack = "";
+	removeWinnerClass();
+	winner = false;
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
 	$('.clef').children()
@@ -165,26 +180,31 @@ trebleButton.on('click', function() {
 });
 
 bassButton.on('click', function() {
-	winTrack = "";
+	removeWinnerClass();
+	winner = false;
 	$('div.button__task').css('opacity', '1');
 	generateBass();
-	$('.clef').children().removeClass('selected hard medium highlight')
+	$('.clef').children()
+	          .removeClass('selected hard medium highlight')
 			      .addClass('easy');
-	$(this).addClass('selected highlight');
+	     $(this).addClass('selected highlight');
 });
 
 bothButton.on ('click', function() {
-	winTrack = "";
+	winner = false;
+	removeWinnerClass();
 	$('div.button__task').css('opacity', '1');
 	generateBoth();
-	$('.clef').children().removeClass('selected hard medium highlight')
+	$('.clef').children()
+						.removeClass('selected hard medium highlight')
 			      .addClass('easy');
-	$(this).addClass('selected highlight');
+	     $(this).addClass('selected highlight');
 });
 
 easyButton.on('click', function() {
-	$('.level').children().removeClass('hard medium highlight')
-			   .addClass('easy');
+	$('.level').children()
+						 .removeClass('hard medium highlight')
+			       .addClass('easy');
 			 $(this).addClass('highlight');
 			 if (trebleButton.hasClass('selected')) {
 			 	generateTreble();
@@ -195,8 +215,9 @@ easyButton.on('click', function() {
 });
 
 mediumButton.on('click', function() {
-	$('.level').children().removeClass('easy hard highlight')
-			   .addClass('medium');
+	$('.level').children()
+						 .removeClass('easy hard highlight')
+			       .addClass('medium');
 			$(this).addClass('highlight');
 			 if (trebleButton.hasClass('selected')) {
 			 	generateTreble();
@@ -206,8 +227,9 @@ mediumButton.on('click', function() {
 		}
 });
 hardButton.on('click', function() {
-	$('.level').children().removeClass('easy medium highlight')
-			   .addClass('hard');
+	$('.level').children()
+						 .removeClass('easy medium highlight')
+			   		 .addClass('hard');
 			$(this).addClass('highlight');
 			 if (trebleButton.hasClass('selected')) {
 			 	generateTreble();
@@ -218,18 +240,16 @@ hardButton.on('click', function() {
 });
 
 function win(){
-		if ((winTrack.indexOf('nr') >= 0 ||
-		    winTrack.indexOf('rn') >= 0) &&
+		if (winnerCondition() &&
 		    trebleButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateTreble, 2000);
-} else if  ((winTrack.indexOf('nr') >= 0 ||
-		    winTrack.indexOf('rn') >= 0) &&
+} else if  (winnerCondition() &
 		    bassButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateBass, 2000);
-} else if   ((winTrack.indexOf('nr') >= 0 ||
-            winTrack.indexOf('rn') >= 0) &&
+} else if   (
+			winnerCondition() &
 			bothButton.hasClass('selected')) {
 			score +=1; scoreDisplay.text(" " + score);
 			setTimeout(generateBoth, 2000);
@@ -240,7 +260,8 @@ noteButton.on('click', function() {
 	if ($(this).context.innerText === note[0]) {
 		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 		$(this).siblings().hide();
-		winTrack += "n";
+		$(this).parent().addClass('winner');
+		//winTrack += "n";
 		$('.task1').text('Correct!');
 		win();
 	} else {
@@ -259,7 +280,8 @@ regButton.on('click', function() {
 	if ($(this).context.innerText === note[1]) {
 		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 		$(this).siblings().hide();
-		winTrack += "r";
+		$(this).parent().addClass('winner');
+		//winTrack += "r";
 		$('.task2').text('Correct!');
 		win();
 	} else {
@@ -291,11 +313,11 @@ cross.on('click', function() {
 $('.one-octave > img').each(function(){
 	$(this).on('click', function() {
 		if($(this).attr('alt') === note[0]) {
+		$(this).parent().addClass('winner');
 		noteButton.each(function(){
 			if($(this).context.innerText === note[0]) {
 			   $(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 		$(this).siblings().css('opacity', '0').hide();
-		winTrack += "n";
 		$('.task1').text('Correct!');
 		$('.task4').text('Correct!');
 		win();
@@ -312,10 +334,10 @@ $('.one-octave > img').each(function(){
 	});
 });
 
-
 $('.keyboard-keys > img').each(function() {
 	$(this).on('click', function() {
 		if($(this).attr('alt') === note) {
+			$(this).parent().addClass('winner');
 			$('.task3').text('Correct!');
 			buttonWin();
 			win();
@@ -335,7 +357,6 @@ $('.keyboard-keys > img').each(function() {
 			if ($(this).context.innerText === note[0]) {
 				$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 				$(this).siblings().css('opacity', '0').hide();
-				winTrack += "n";
 				$('.task1').text('Correct!');
 			 }
 		});
@@ -344,9 +365,7 @@ $('.keyboard-keys > img').each(function() {
 			if ($(this).context.innerText === note[1]) {
 				$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 				$(this).siblings().css('opacity', '0').hide();
-				winTrack += "r";
 				$('.task2').text('Correct!');
-
 			   }
 		   });
 	    }
