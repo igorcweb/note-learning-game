@@ -153,7 +153,7 @@ function hardBass() {
 	getRandomInt(0, 4);
 	}
 }
-
+//Treble Button
 $('.clef').on('click', '.treble', function() {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
@@ -163,7 +163,7 @@ $('.clef').on('click', '.treble', function() {
 			      .addClass('easy');
 			 $(this).addClass('selected highlight');
 });
-
+//Bass Button
 $('.clef').on('click', '.bass', function() {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
@@ -173,7 +173,7 @@ $('.clef').on('click', '.bass', function() {
 			      .addClass('easy');
 	$(this).addClass('selected highlight');
 });
-
+//Both Button
 $('.clef').on ('click', '.both', function() {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
@@ -182,8 +182,8 @@ $('.clef').on ('click', '.both', function() {
 			      .addClass('easy');
 	$(this).addClass('selected highlight');
 });
-
-easyButton.on('click', function() {
+//Easy Button
+$('.level').on('click', '#easy', function() {
 	$('.level').children().removeClass('hard medium highlight')
 			   .addClass('easy');
 			 $(this).addClass('highlight');
@@ -194,8 +194,8 @@ easyButton.on('click', function() {
 			 } else {generateBoth();
 		}
 });
-
-mediumButton.on('click', function() {
+//Medium Button
+$('.level').on('click', '#medium', function() {
 	$('.level').children().removeClass('easy hard highlight')
 			   .addClass('medium');
 			$(this).addClass('highlight');
@@ -206,7 +206,8 @@ mediumButton.on('click', function() {
 			 } else {generateBoth();
 		}
 });
-hardButton.on('click', function() {
+//Hard Button
+$('.level').on('click', '#hard', function() {
 	$('.level').children().removeClass('easy medium highlight')
 			   .addClass('hard');
 			$(this).addClass('highlight');
