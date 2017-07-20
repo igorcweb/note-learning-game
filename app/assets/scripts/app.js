@@ -1,8 +1,7 @@
 "use strict"
 
-var $ = require('jquery');
-
-var note      = "",
+var $         = require('jquery'),
+note          = "",
 imgSrc        = "",
 reg           = 0,
 noteNumber    = 0,
