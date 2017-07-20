@@ -240,7 +240,6 @@ function win(){
 	 }
 
 noteButton.on('click', function() {
-	console.log('note button was clicked');
 	if ($(this).context.innerText === note[0]) {
 		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
 		$(this).siblings().hide();
