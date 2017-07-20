@@ -207,7 +207,7 @@
 		$(this).addClass('selected highlight');
 	});
 
-	bassButton.on('click', function () {
+	$('.clef').on('click', '.bass', function () {
 		winTrack = "";
 		$('div.button__task').css('opacity', '1');
 		generateBass();
@@ -215,7 +215,7 @@
 		$(this).addClass('selected highlight');
 	});
 
-	bothButton.on('click', function () {
+	$('.clef').on('click', '.both', function () {
 		winTrack = "";
 		$('div.button__task').css('opacity', '1');
 		generateBoth();
