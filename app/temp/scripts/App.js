@@ -199,7 +199,7 @@
 		}
 	}
 
-	trebleButton.on('click', function () {
+	$('.clef').on('click', '.treble', function () {
 		winTrack = "";
 		$('div.button__task').css('opacity', '1');
 		generateTreble();
