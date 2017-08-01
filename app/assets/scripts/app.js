@@ -1,34 +1,40 @@
 "use strict"
 
-var $         = require('jquery'),
-note          = "",
-imgSrc        = "",
-reg           = 0,
-noteNumber    = 0,
-notes         = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-trebleButton  = $('.treble'),
-bassButton    = $('.bass'),
-bothButton    = $('.both'),
-easyButton    = $('#easy'),
-mediumButton  = $('#medium'),
-hardButton    = $('#hard'),
-noteButton    = $('.note-button > .button__task'),
-regButton     = $('.reg-button > .button__task'),
-winTrack      = "",
-score         = 0,
-scoreDisplay  = $('h1 span#score'),
-noteTrack     = [],
-maxNotes      = 0,
-counter       = 0,
-hamburger     = $('.hamburger'),
-cross         = $('.cross'),
-year          = $('footer p span.year');
+var $ = require('jquery'),
+note = "",
+imgSrc = "",
+reg = 0,
+noteNumber = 0,
+notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+trebleButton = $('.treble'),
+bassButton = $('.bass'),
+bothButton = $('.both'),
+easyButton = $('#easy'),
+mediumButton = $('#medium'),
+hardButton = $('#hard'),
+noteButton = $('.note-button > .button__task'),
+regButton = $('.reg-button > .button__task'),
+winTrack = "",
+score = 0,
+scoreDisplay = $('h1 span#score'),
+noteTrack = [],
+maxNotes = 0,
+counter = 0,
+hamburger = $('.hamburger'),
+cross = $('.cross'),
+year = $('footer p span.year');
 
 generateTreble();
 
 function generateTreble() {
-	noteButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
-	regButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
+	noteButton.show().css({
+		'color': 'inherit',
+		'background-color': '#B4BFBF'
+	});
+	regButton.show().css({
+		'color': 'inherit',
+		'background-color': '#B4BFBF'
+	});
 	$('.task1').text('Pick a Note:');
 	$('.task2').text('Pick a Register:');
 	$('.task3').text('or Pick a Key:');
@@ -36,11 +42,14 @@ function generateTreble() {
 	$('div.button__task').css('opacity', '1');
 	winTrack = "";
 	if ($('.level').children().hasClass('easy')) {
-		easyTreble(); maxNotes = 11;
+		easyTreble();
+		maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
-		mediumTreble(); maxNotes = 17;
+		mediumTreble();
+		maxNotes = 17;
 	} else {
-		hardTreble(); maxNotes = 32;
+		hardTreble();
+		maxNotes = 32;
 	}
 	note = notes[noteNumber];
 	note += reg;
@@ -53,7 +62,7 @@ function generateTreble() {
 	if (noteTrack.indexOf(note) >= 0) {
 		generateTreble();
 	} else {
-		counter ++;
+		counter++;
 		imgSrc = "assets/images/" + note + ".jpg";
 		$('.notes').attr('src', imgSrc);
 		noteTrack.push(note);
@@ -61,8 +70,14 @@ function generateTreble() {
 }
 
 function generateBass() {
-	noteButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
-	regButton.show().css({'color': 'inherit', 'background-color': '#B4BFBF'});
+	noteButton.show().css({
+		'color': 'inherit',
+		'background-color': '#B4BFBF'
+	});
+	regButton.show().css({
+		'color': 'inherit',
+		'background-color': '#B4BFBF'
+	});
 	$('.task1').text('Pick a Note:');
 	$('.task2').text('Pick a Register:');
 	$('.task3').text('or Pick a Key:');
@@ -70,11 +85,14 @@ function generateBass() {
 	$('div.button__task').css('opacity', '1');
 	winTrack = "";
 	if ($('.level').children().hasClass('easy')) {
-		easyBass(); maxNotes = 11;
+		easyBass();
+		maxNotes = 11;
 	} else if ($('.level').children().hasClass('medium')) {
-		mediumBass(); maxNotes = 17;
+		mediumBass();
+		maxNotes = 17;
 	} else {
-		hardBass(); maxNotes = 26;
+		hardBass();
+		maxNotes = 26;
 	}
 	note = notes[noteNumber];
 	note += reg;
@@ -87,7 +105,7 @@ function generateBass() {
 	if (noteTrack.indexOf(note) >= 0) {
 		generateBass();
 	} else {
-		counter ++;
+		counter++;
 		imgSrc = "assets/images/" + "b" + note + ".jpg";
 		$('.notes').attr('src', imgSrc);
 		noteTrack.push(note);
@@ -150,98 +168,108 @@ function mediumBass() {
 function hardBass() {
 	reg = getRandomInt(1, 4);
 	noteNumber = getRandomInt(0, 6);
-	if (reg === 4) {noteNumber =
-	getRandomInt(0, 4);
+	if (reg === 4) {
+		noteNumber =
+			getRandomInt(0, 4);
 	}
 }
 //Treble Button
-$('.clef').on('click', '.treble', function() {
+$('.clef').on('click', '.treble', function () {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
 	$('.clef').children()
-					  .removeClass('selected hard medium highlight')
-			      .addClass('easy');
-			 $(this).addClass('selected highlight');
+		.removeClass('selected hard medium highlight')
+		.addClass('easy');
+	$(this).addClass('selected highlight');
 });
 //Bass Button
-$('.clef').on('click', '.bass', function() {
+$('.clef').on('click', '.bass', function () {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateBass();
 	$('.clef').children()
-				.removeClass('selected hard medium highlight')
-			      .addClass('easy');
+		.removeClass('selected hard medium highlight')
+		.addClass('easy');
 	$(this).addClass('selected highlight');
 });
 //Both Button
-$('.clef').on ('click', '.both', function() {
+$('.clef').on('click', '.both', function () {
 	winTrack = "";
 	$('div.button__task').css('opacity', '1');
 	generateBoth();
 	$('.clef').children().removeClass('selected hard medium highlight')
-			      .addClass('easy');
+		.addClass('easy');
 	$(this).addClass('selected highlight');
 });
 //Easy Button
-$('.level').on('click', '#easy', function() {
+$('.level').on('click', '#easy', function () {
 	$('.level').children().removeClass('hard medium highlight')
-			   .addClass('easy');
-			 $(this).addClass('highlight');
-			 if (trebleButton.hasClass('selected')) {
-			 	generateTreble();
-			 } else if(bassButton.hasClass('selected')) {
-			 	generateBass();
-			 } else {generateBoth();
-		}
+		.addClass('easy');
+	$(this).addClass('highlight');
+	if (trebleButton.hasClass('selected')) {
+		generateTreble();
+	} else if (bassButton.hasClass('selected')) {
+		generateBass();
+	} else {
+		generateBoth();
+	}
 });
 //Medium Button
-$('.level').on('click', '#medium', function() {
+$('.level').on('click', '#medium', function () {
 	$('.level').children().removeClass('easy hard highlight')
-			   .addClass('medium');
-			$(this).addClass('highlight');
-			 if (trebleButton.hasClass('selected')) {
-			 	generateTreble();
-			 } else if(bassButton.hasClass('selected')) {
-			 	generateBass();
-			 } else {generateBoth();
-		}
+		.addClass('medium');
+	$(this).addClass('highlight');
+	if (trebleButton.hasClass('selected')) {
+		generateTreble();
+	} else if (bassButton.hasClass('selected')) {
+		generateBass();
+	} else {
+		generateBoth();
+	}
 });
 //Hard Button
-$('.level').on('click', '#hard', function() {
+$('.level').on('click', '#hard', function () {
 	$('.level').children().removeClass('easy medium highlight')
-			   .addClass('hard');
-			$(this).addClass('highlight');
-			 if (trebleButton.hasClass('selected')) {
-			 	generateTreble();
-			 } else if(bassButton.hasClass('selected')) {
-			 	generateBass();
-			 } else {generateBoth();
-		}
+		.addClass('hard');
+	$(this).addClass('highlight');
+	if (trebleButton.hasClass('selected')) {
+		generateTreble();
+	} else if (bassButton.hasClass('selected')) {
+		generateBass();
+	} else {
+		generateBoth();
+	}
 });
 
-function win(){
-		if ((winTrack.indexOf('nr') >= 0 ||
-		    winTrack.indexOf('rn') >= 0) &&
-		    trebleButton.hasClass('selected')) {
-			score +=1; scoreDisplay.text(" " + score);
-			setTimeout(generateTreble, 2000);
-} else if  ((winTrack.indexOf('nr') >= 0 ||
-		    winTrack.indexOf('rn') >= 0) &&
-		    bassButton.hasClass('selected')) {
-			score +=1; scoreDisplay.text(" " + score);
-			setTimeout(generateBass, 2000);
-} else if   ((winTrack.indexOf('nr') >= 0 ||
-            winTrack.indexOf('rn') >= 0) &&
-			bothButton.hasClass('selected')) {
-			score +=1; scoreDisplay.text(" " + score);
-			setTimeout(generateBoth, 2000);
+function win() {
+	if ((winTrack.indexOf('nr') >= 0 ||
+			winTrack.indexOf('rn') >= 0) &&
+		trebleButton.hasClass('selected')) {
+		score += 1;
+		scoreDisplay.text(" " + score);
+		setTimeout(generateTreble, 2000);
+	} else if ((winTrack.indexOf('nr') >= 0 ||
+			winTrack.indexOf('rn') >= 0) &&
+		bassButton.hasClass('selected')) {
+		score += 1;
+		scoreDisplay.text(" " + score);
+		setTimeout(generateBass, 2000);
+	} else if ((winTrack.indexOf('nr') >= 0 ||
+			winTrack.indexOf('rn') >= 0) &&
+		bothButton.hasClass('selected')) {
+		score += 1;
+		scoreDisplay.text(" " + score);
+		setTimeout(generateBoth, 2000);
+	}
 }
-	 }
 
-noteButton.on('click', function() {
+noteButton.on('click', function () {
 	if ($(this).context.innerText === note[0]) {
-		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
+		$(this).css({
+			'color': '#fafafa',
+			'background-color': 'steelblue'
+		});
 		$(this).siblings().hide();
 		winTrack += "n";
 		$('.task1').text('Correct!');
@@ -258,9 +286,12 @@ noteButton.on('click', function() {
 
 });
 
-regButton.on('click', function() {
+regButton.on('click', function () {
 	if ($(this).context.innerText === note[1]) {
-		$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
+		$(this).css({
+			'color': '#fafafa',
+			'background-color': 'steelblue'
+		});
 		$(this).siblings().hide();
 		winTrack += "r";
 		$('.task2').text('Correct!');
@@ -277,82 +308,91 @@ regButton.on('click', function() {
 
 });
 
-hamburger.on('click', function() {
+hamburger.on('click', function () {
 	$(this).hide();
 	cross.show();
 	$('.button__mode').css('visibility', 'visible');
 	$('.button__info').css('visibility', 'visible');
 });
 
-cross.on('click', function() {
+cross.on('click', function () {
 	$(this).hide();
 	hamburger.show();
 	$('.button__mode').css('visibility', 'hidden');
 	$('.button__info').css('visibility', 'hidden');
 });
-
-$('.one-octave > img').each(function(){
-	$(this).on('click', function() {
-		if($(this).attr('alt') === note[0]) {
-		noteButton.each(function(){
-			if($(this).context.innerText === note[0]) {
-			   $(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
-		$(this).siblings().css('opacity', '0').hide();
-		winTrack += "n";
-		$('.task1').text('Correct!');
-		$('.task4').text('Correct!');
-		win();
-			}
-		});
+//small keyboard for small screens
+$('.one-octave > img').each(function () {
+	$(this).on('click', function () {
+		if ($(this).attr('alt') === note[0]) {
+			noteButton.each(function () {
+				if ($(this).context.innerText === note[0]) {
+					$(this).css({
+						'color': '#fafafa',
+						'background-color': 'steelblue'
+					});
+					$(this).siblings().css('opacity', '0').hide();
+					winTrack += "n";
+					$('.task1').text('Correct!');
+					$('.task4').text('Correct!');
+					win();
+				}
+			});
 		} else {
 			$('.task4').text('');
-				setTimeout(function() {
+			setTimeout(function () {
 				$('.task4').text('Try Again!');
-				}, 200);
-				score = 0;
-				scoreDisplay.text(" " + score);
+			}, 200);
+			score = 0;
+			scoreDisplay.text(" " + score);
 		}
 	});
 });
 
 
-$('.keyboard-keys > img').each(function() {
-	$(this).on('click', function() {
-		if($(this).attr('alt') === note) {
+$('.keyboard-keys > img').each(function () {
+	$(this).on('click', function () {
+		if ($(this).attr('alt') === note) {
 			$('.task3').text('Correct!');
 			buttonWin();
 			win();
 
-	} else {
-		$('.task3').text('');
-		setTimeout(function() {
-			$('.task3').text('Try Again!')
+		} else {
+			$('.task3').text('');
+			setTimeout(function () {
+				$('.task3').text('Try Again!')
 			}, 200);
 
-		score = 0;
-		scoreDisplay.text(" " + score);
-	}
+			score = 0;
+			scoreDisplay.text(" " + score);
+		}
 
-	function buttonWin() {
-		$('.note-button > .button').each(function() {
-			if ($(this).context.innerText === note[0]) {
-				$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
-				$(this).siblings().css('opacity', '0').hide();
-				winTrack += "n";
-				$('.task1').text('Correct!');
-			 }
-		});
+		function buttonWin() {
+			$('.note-button > .button').each(function () {
+				if ($(this).context.innerText === note[0]) {
+					$(this).css({
+						'color': '#fafafa',
+						'background-color': 'steelblue'
+					});
+					$(this).siblings().css('opacity', '0').hide();
+					winTrack += "n";
+					$('.task1').text('Correct!');
+				}
+			});
 
-		$('.reg-button > .button').each(function() {
-			if ($(this).context.innerText === note[1]) {
-				$(this).css({'color': '#fafafa', 'background-color': 'steelblue'});
-				$(this).siblings().css('opacity', '0').hide();
-				winTrack += "r";
-				$('.task2').text('Correct!');
+			$('.reg-button > .button').each(function () {
+				if ($(this).context.innerText === note[1]) {
+					$(this).css({
+						'color': '#fafafa',
+						'background-color': 'steelblue'
+					});
+					$(this).siblings().css('opacity', '0').hide();
+					winTrack += "r";
+					$('.task2').text('Correct!');
 
-			   }
-		   });
-	    }
+				}
+			});
+		}
 	});
 });
 
@@ -360,5 +400,5 @@ $('.keyboard-keys > img').each(function() {
 year.text(new Date().getFullYear());
 
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
