@@ -1,0 +1,105 @@
+.keyboard-keys {
+	display: none;
+
+	@mixin atMedium {
+		display: block;
+		float: left;
+		width: 98%;
+		position: absolute;
+		bottom: 19vh;
+		left: 1%;
+		cursor: pointer;
+	}
+
+	@mixin atLarge {
+		display: block;
+		float: left;
+		width: 97%;
+		left: 1.5%;
+	}	
+}
+.one-octave {
+	display: block;
+		position: absolute;
+		margin:0 auto;
+		left: 0;
+		right: 0;
+		top: 47%;
+		transform: translateY(-25%);
+		width: 9.875rem;
+		cursor: pointer;
+
+	@mixin atSmall {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 49%;
+		transform: translateY(-25%);
+		width: 9.875rem;
+		cursor: pointer;
+	}
+
+	@mixin atMedium {
+		display: none;
+	}
+}
+
+.keys {
+	float: left;
+	border-bottom: 1px solid #ccc;
+	height: 5.8rem;
+	width: 1.4rem;
+
+	@mixin atSmall {
+		height: 5.8rem;
+		width: 1.4rem;
+	}
+
+	@mixin atMedium {
+	margin-bottom: -5.5rem;
+	width: 1.91%;
+	height: 5.58rem;
+	}
+
+	@mixin atLarge {
+		height: 5.625rem;
+	}
+}
+
+.keys:hover {
+	border: 0;
+	box-shadow: inset 0 0 2px #ccc;
+	    
+}
+
+.task3 {
+	display: none;
+
+	@mixin atMedium {
+		display: block;
+		position: absolute;
+		bottom: .1rem;
+		left: -.5625rem;
+	}
+
+	@mixin atLarge {
+		bottom: .1rem;
+		left: -.5625rem;
+	}	
+}
+
+.task4 {
+	position: absolute;
+	top: 32%;
+	line-height: 145%;
+
+
+	@mixin atSmall {
+	top: 35%;
+	}
+
+	@mixin atMedium {
+		display: none;
+	}
+}
+

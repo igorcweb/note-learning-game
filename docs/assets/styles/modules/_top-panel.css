@@ -1,0 +1,116 @@
+.top-panel {
+	position: relative;	
+	z-index: 0;
+}
+
+.heading {
+	color: #fff;
+	background-color: steelblue;
+	font-weight: 300;
+	margin: 0;
+	padding: .4rem .6rem;
+	font-size: 110%;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+		@mixin atSmall {
+			position: static;
+			text-align: center;
+			font-size: 140%;
+			padding: .5rem 0;
+			letter-spacing: 2px;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+		}
+
+		@mixin atMedium {
+			font-size: 170%;
+			letter-spacing: 2px;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.score {
+	color: #fff;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: -6px;
+	right: .6rem;
+	font-weight: 300;
+	font-size: 110%;
+	letter-spacing: 2px;
+
+	@mixin atSmall {
+	right: 1rem;
+	font-size: 140%;
+	letter-spacing: 2px;
+	font-weight: 300;
+	top: -7px;
+	}
+	 
+	@mixin atMedium {
+		right: 2rem;
+		font-size: 170%;
+		letter-spacing: 2px;
+		top: -10px;
+	}	
+}
+
+.button__info {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 2.375rem;
+			text-align: center;
+			visibility: hidden;
+			/*border-radius: 15%;*/
+			background-color: #B4BFBF;
+			font-weight: 300;
+			font-size: 90%;
+			width: 5.125rem;
+			letter-spacing: 1px;
+			padding-top: 2px;
+			line-height: 1rem;
+			margin: 0 auto;
+			z-index: 10;
+
+			a {
+				text-decoration: none;
+				color: #333;
+			}
+
+
+
+		@mixin atSmall {
+			visibility: visible !important;
+			background: steelblue;
+			border: 2px solid #B4BFBF;
+			font-size: 95%;			
+			letter-spacing: 1px;
+			padding-bottom: 2px;
+			width: 5.75rem;
+			left: 1rem;
+			top: .5rem;
+			margin:0;
+
+				a {
+					color: #fff;
+				}
+
+			}
+		@mixin atMedium {
+			width: 6.125rem;
+			letter-spacing: 2px;			
+			padding: 2px;
+			left: 2rem;
+			top: .625rem;
+			}
+		@mixin atLarge {
+			
+		}	
+	}
+
+
+
+
+

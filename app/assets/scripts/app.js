@@ -1,20 +1,21 @@
 "use strict"
 
-var $ = require('jquery'),
+var $ = require("jquery"),
 note = "",
 imgSrc = "",
 reg = 0,
 noteNumber = 0,
-notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-trebleButton = $('.treble'),
-bassButton = $('.bass'),
-bothButton = $('.both'),
-easyButton = $('#easy'),
-mediumButton = $('#medium'),
-hardButton = $('#hard'),
-noteButton = $('.note-button > .button__task'),
-regButton = $('.reg-button > .button__task'),
+notes = ["C", "D", "E", "F", "G", "A", "B",],
+trebleButton = $(".treble"),
+bassButton = $(".bass"),
+bothButton = $(".both"),
+easyButton = $("#easy"),
+mediumButton = $("#medium"),
+hardButton = $("#hard"),
+noteButton = $(".note-button > .button__task"),
+regButton = $(".reg-button > .button__task"),
 winTrack = "",
+clefButtons = $(".button__mode--clef"),
 score = 0,
 scoreDisplay = $('h1 span#score'),
 noteTrack = [],
@@ -41,6 +42,7 @@ function generateTreble() {
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
 	winTrack = "";
+	clefButtons.removeClass('note reg');
 	if ($('.level').children().hasClass('easy')) {
 		easyTreble();
 		maxNotes = 11;
@@ -84,6 +86,7 @@ function generateBass() {
 	$('.task4').text('or a Key:');
 	$('div.button__task').css('opacity', '1');
 	winTrack = "";
+	clefButtons.removeClass("note reg");
 	if ($('.level').children().hasClass('easy')) {
 		easyBass();
 		maxNotes = 11;
@@ -176,6 +179,7 @@ function hardBass() {
 //Treble Button
 $('.clef').on('click', '.treble', function () {
 	winTrack = "";
+	clefButtons.removeClass("note reg");
 	$('div.button__task').css('opacity', '1');
 	generateTreble();
 	$('.clef').children()
@@ -186,6 +190,7 @@ $('.clef').on('click', '.treble', function () {
 //Bass Button
 $('.clef').on('click', '.bass', function () {
 	winTrack = "";
+	clefButtons.removeClass("note reg");
 	$('div.button__task').css('opacity', '1');
 	generateBass();
 	$('.clef').children()
@@ -196,6 +201,7 @@ $('.clef').on('click', '.bass', function () {
 //Both Button
 $('.clef').on('click', '.both', function () {
 	winTrack = "";
+	clefButtons.removeClass("note reg");
 	$('div.button__task').css('opacity', '1');
 	generateBoth();
 	$('.clef').children().removeClass('selected hard medium highlight')
@@ -243,21 +249,16 @@ $('.level').on('click', '#hard', function () {
 });
 
 function win() {
-	if ((winTrack.indexOf('nr') >= 0 ||
-			winTrack.indexOf('rn') >= 0) &&
-		trebleButton.hasClass('selected')) {
+	if (trebleButton.is('.selected.note.reg')) {
+		console.log(true);	
 		score += 1;
 		scoreDisplay.text(" " + score);
 		setTimeout(generateTreble, 2000);
-	} else if ((winTrack.indexOf('nr') >= 0 ||
-			winTrack.indexOf('rn') >= 0) &&
-		bassButton.hasClass('selected')) {
+	} else if (bassButton.is('.selected.note.reg')) {
 		score += 1;
 		scoreDisplay.text(" " + score);
 		setTimeout(generateBass, 2000);
-	} else if ((winTrack.indexOf('nr') >= 0 ||
-			winTrack.indexOf('rn') >= 0) &&
-		bothButton.hasClass('selected')) {
+	} else if (bothButton.is('.selected.note.reg')) {
 		score += 1;
 		scoreDisplay.text(" " + score);
 		setTimeout(generateBoth, 2000);
@@ -272,6 +273,7 @@ noteButton.on('click', function () {
 		});
 		$(this).siblings().hide();
 		winTrack += "n";
+		clefButtons.addClass('note');
 		$('.task1').text('Correct!');
 		win();
 	} else {
@@ -294,6 +296,7 @@ regButton.on('click', function () {
 		});
 		$(this).siblings().hide();
 		winTrack += "r";
+		clefButtons.addClass('reg');
 		$('.task2').text('Correct!');
 		win();
 	} else {
@@ -333,6 +336,7 @@ $('.one-octave > img').each(function () {
 					});
 					$(this).siblings().css('opacity', '0').hide();
 					winTrack += "n";
+					clefButtons.addClass('note');
 					$('.task1').text('Correct!');
 					$('.task4').text('Correct!');
 					win();
@@ -376,6 +380,7 @@ $('.keyboard-keys > img').each(function () {
 					});
 					$(this).siblings().css('opacity', '0').hide();
 					winTrack += "n";
+					clefButtons.addClass('note');
 					$('.task1').text('Correct!');
 				}
 			});
@@ -388,6 +393,7 @@ $('.keyboard-keys > img').each(function () {
 					});
 					$(this).siblings().css('opacity', '0').hide();
 					winTrack += "r";
+					clefButtons.addClass('reg');
 					$('.task2').text('Correct!');
 
 				}

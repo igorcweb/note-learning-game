@@ -1,4 +1,4 @@
-let gulp = require('gulp'),
+var gulp = require('gulp'),
 webpack = require('webpack');
 
 gulp.task('scripts', ['modernizr'], function(callback) {

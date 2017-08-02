@@ -51,16 +51,17 @@
 	    imgSrc = "",
 	    reg = 0,
 	    noteNumber = 0,
-	    notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-	    trebleButton = $('.treble'),
-	    bassButton = $('.bass'),
-	    bothButton = $('.both'),
-	    easyButton = $('#easy'),
-	    mediumButton = $('#medium'),
-	    hardButton = $('#hard'),
-	    noteButton = $('.note-button > .button__task'),
-	    regButton = $('.reg-button > .button__task'),
+	    notes = ["C", "D", "E", "F", "G", "A", "B"],
+	    trebleButton = $(".treble"),
+	    bassButton = $(".bass"),
+	    bothButton = $(".both"),
+	    easyButton = $("#easy"),
+	    mediumButton = $("#medium"),
+	    hardButton = $("#hard"),
+	    noteButton = $(".note-button > .button__task"),
+	    regButton = $(".reg-button > .button__task"),
 	    winTrack = "",
+	    clefButtons = $(".button__mode--clef"),
 	    score = 0,
 	    scoreDisplay = $('h1 span#score'),
 	    noteTrack = [],
@@ -73,20 +74,30 @@
 	generateTreble();
 
 	function generateTreble() {
-		noteButton.show().css({ 'color': 'inherit', 'background-color': '#B4BFBF' });
-		regButton.show().css({ 'color': 'inherit', 'background-color': '#B4BFBF' });
+		noteButton.show().css({
+			'color': 'inherit',
+			'background-color': '#B4BFBF'
+		});
+		regButton.show().css({
+			'color': 'inherit',
+			'background-color': '#B4BFBF'
+		});
 		$('.task1').text('Pick a Note:');
 		$('.task2').text('Pick a Register:');
 		$('.task3').text('or Pick a Key:');
 		$('.task4').text('or a Key:');
 		$('div.button__task').css('opacity', '1');
 		winTrack = "";
+		clefButtons.removeClass('note reg');
 		if ($('.level').children().hasClass('easy')) {
-			easyTreble();maxNotes = 11;
+			easyTreble();
+			maxNotes = 11;
 		} else if ($('.level').children().hasClass('medium')) {
-			mediumTreble();maxNotes = 17;
+			mediumTreble();
+			maxNotes = 17;
 		} else {
-			hardTreble();maxNotes = 32;
+			hardTreble();
+			maxNotes = 32;
 		}
 		note = notes[noteNumber];
 		note += reg;
@@ -107,20 +118,30 @@
 	}
 
 	function generateBass() {
-		noteButton.show().css({ 'color': 'inherit', 'background-color': '#B4BFBF' });
-		regButton.show().css({ 'color': 'inherit', 'background-color': '#B4BFBF' });
+		noteButton.show().css({
+			'color': 'inherit',
+			'background-color': '#B4BFBF'
+		});
+		regButton.show().css({
+			'color': 'inherit',
+			'background-color': '#B4BFBF'
+		});
 		$('.task1').text('Pick a Note:');
 		$('.task2').text('Pick a Register:');
 		$('.task3').text('or Pick a Key:');
 		$('.task4').text('or a Key:');
 		$('div.button__task').css('opacity', '1');
 		winTrack = "";
+		clefButtons.removeClass("note reg");
 		if ($('.level').children().hasClass('easy')) {
-			easyBass();maxNotes = 11;
+			easyBass();
+			maxNotes = 11;
 		} else if ($('.level').children().hasClass('medium')) {
-			mediumBass();maxNotes = 17;
+			mediumBass();
+			maxNotes = 17;
 		} else {
-			hardBass();maxNotes = 26;
+			hardBass();
+			maxNotes = 26;
 		}
 		note = notes[noteNumber];
 		note += reg;
@@ -202,6 +223,7 @@
 	//Treble Button
 	$('.clef').on('click', '.treble', function () {
 		winTrack = "";
+		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateTreble();
 		$('.clef').children().removeClass('selected hard medium highlight').addClass('easy');
@@ -210,6 +232,7 @@
 	//Bass Button
 	$('.clef').on('click', '.bass', function () {
 		winTrack = "";
+		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateBass();
 		$('.clef').children().removeClass('selected hard medium highlight').addClass('easy');
@@ -218,6 +241,7 @@
 	//Both Button
 	$('.clef').on('click', '.both', function () {
 		winTrack = "";
+		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateBoth();
 		$('.clef').children().removeClass('selected hard medium highlight').addClass('easy');
@@ -261,24 +285,31 @@
 	});
 
 	function win() {
-		if ((winTrack.indexOf('nr') >= 0 || winTrack.indexOf('rn') >= 0) && trebleButton.hasClass('selected')) {
-			score += 1;scoreDisplay.text(" " + score);
+		if (trebleButton.is('.selected.note.reg')) {
+			console.log(true);
+			score += 1;
+			scoreDisplay.text(" " + score);
 			setTimeout(generateTreble, 2000);
-		} else if ((winTrack.indexOf('nr') >= 0 || winTrack.indexOf('rn') >= 0) && bassButton.hasClass('selected')) {
-			score += 1;scoreDisplay.text(" " + score);
+		} else if (bassButton.is('.selected.note.reg')) {
+			score += 1;
+			scoreDisplay.text(" " + score);
 			setTimeout(generateBass, 2000);
-		} else if ((winTrack.indexOf('nr') >= 0 || winTrack.indexOf('rn') >= 0) && bothButton.hasClass('selected')) {
-			score += 1;scoreDisplay.text(" " + score);
+		} else if (bothButton.is('.selected.note.reg')) {
+			score += 1;
+			scoreDisplay.text(" " + score);
 			setTimeout(generateBoth, 2000);
 		}
 	}
 
 	noteButton.on('click', function () {
-		console.log('note button was clicked');
 		if ($(this).context.innerText === note[0]) {
-			$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
+			$(this).css({
+				'color': '#fafafa',
+				'background-color': 'steelblue'
+			});
 			$(this).siblings().hide();
 			winTrack += "n";
+			clefButtons.addClass('note');
 			$('.task1').text('Correct!');
 			win();
 		} else {
@@ -294,9 +325,13 @@
 
 	regButton.on('click', function () {
 		if ($(this).context.innerText === note[1]) {
-			$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
+			$(this).css({
+				'color': '#fafafa',
+				'background-color': 'steelblue'
+			});
 			$(this).siblings().hide();
 			winTrack += "r";
+			clefButtons.addClass('reg');
 			$('.task2').text('Correct!');
 			win();
 		} else {
@@ -323,15 +358,19 @@
 		$('.button__mode').css('visibility', 'hidden');
 		$('.button__info').css('visibility', 'hidden');
 	});
-
+	//small keyboard for small screens
 	$('.one-octave > img').each(function () {
 		$(this).on('click', function () {
 			if ($(this).attr('alt') === note[0]) {
 				noteButton.each(function () {
 					if ($(this).context.innerText === note[0]) {
-						$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
+						$(this).css({
+							'color': '#fafafa',
+							'background-color': 'steelblue'
+						});
 						$(this).siblings().css('opacity', '0').hide();
 						winTrack += "n";
+						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 						$('.task4').text('Correct!');
 						win();
@@ -367,18 +406,26 @@
 			function buttonWin() {
 				$('.note-button > .button').each(function () {
 					if ($(this).context.innerText === note[0]) {
-						$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
+						$(this).css({
+							'color': '#fafafa',
+							'background-color': 'steelblue'
+						});
 						$(this).siblings().css('opacity', '0').hide();
 						winTrack += "n";
+						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 					}
 				});
 
 				$('.reg-button > .button').each(function () {
 					if ($(this).context.innerText === note[1]) {
-						$(this).css({ 'color': '#fafafa', 'background-color': 'steelblue' });
+						$(this).css({
+							'color': '#fafafa',
+							'background-color': 'steelblue'
+						});
 						$(this).siblings().css('opacity', '0').hide();
 						winTrack += "r";
+						clefButtons.addClass('reg');
 						$('.task2').text('Correct!');
 					}
 				});
