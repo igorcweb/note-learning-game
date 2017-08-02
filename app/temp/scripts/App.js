@@ -60,7 +60,6 @@
 	    hardButton = $("#hard"),
 	    noteButton = $(".note-button > .button__task"),
 	    regButton = $(".reg-button > .button__task"),
-	    winTrack = "",
 	    clefButtons = $(".button__mode--clef"),
 	    score = 0,
 	    scoreDisplay = $('h1 span#score'),
@@ -87,7 +86,6 @@
 		$('.task3').text('or Pick a Key:');
 		$('.task4').text('or a Key:');
 		$('div.button__task').css('opacity', '1');
-		winTrack = "";
 		clefButtons.removeClass('note reg');
 		if ($('.level').children().hasClass('easy')) {
 			easyTreble();
@@ -131,7 +129,6 @@
 		$('.task3').text('or Pick a Key:');
 		$('.task4').text('or a Key:');
 		$('div.button__task').css('opacity', '1');
-		winTrack = "";
 		clefButtons.removeClass("note reg");
 		if ($('.level').children().hasClass('easy')) {
 			easyBass();
@@ -222,7 +219,6 @@
 	}
 	//Treble Button
 	$('.clef').on('click', '.treble', function () {
-		winTrack = "";
 		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateTreble();
@@ -231,7 +227,6 @@
 	});
 	//Bass Button
 	$('.clef').on('click', '.bass', function () {
-		winTrack = "";
 		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateBass();
@@ -240,7 +235,6 @@
 	});
 	//Both Button
 	$('.clef').on('click', '.both', function () {
-		winTrack = "";
 		clefButtons.removeClass("note reg");
 		$('div.button__task').css('opacity', '1');
 		generateBoth();
@@ -308,7 +302,6 @@
 				'background-color': 'steelblue'
 			});
 			$(this).siblings().hide();
-			winTrack += "n";
 			clefButtons.addClass('note');
 			$('.task1').text('Correct!');
 			win();
@@ -330,7 +323,6 @@
 				'background-color': 'steelblue'
 			});
 			$(this).siblings().hide();
-			winTrack += "r";
 			clefButtons.addClass('reg');
 			$('.task2').text('Correct!');
 			win();
@@ -369,7 +361,6 @@
 							'background-color': 'steelblue'
 						});
 						$(this).siblings().css('opacity', '0').hide();
-						winTrack += "n";
 						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 						$('.task4').text('Correct!');
@@ -411,7 +402,6 @@
 							'background-color': 'steelblue'
 						});
 						$(this).siblings().css('opacity', '0').hide();
-						winTrack += "n";
 						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 					}
@@ -424,7 +414,6 @@
 							'background-color': 'steelblue'
 						});
 						$(this).siblings().css('opacity', '0').hide();
-						winTrack += "r";
 						clefButtons.addClass('reg');
 						$('.task2').text('Correct!');
 					}
