@@ -360,7 +360,7 @@
 							'color': '#fafafa',
 							'background-color': 'steelblue'
 						});
-						$(this).siblings().css('opacity', '0').hide();
+						$(this).siblings().hide();
 						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 						$('.task4').text('Correct!');
@@ -401,7 +401,7 @@
 							'color': '#fafafa',
 							'background-color': 'steelblue'
 						});
-						$(this).siblings().css('opacity', '0').hide();
+						$(this).siblings().hide();
 						clefButtons.addClass('note');
 						$('.task1').text('Correct!');
 					}
@@ -425,6 +425,7 @@
 	//Footer Year
 	year.text(new Date().getFullYear());
 
+	//Random Number Generator
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}

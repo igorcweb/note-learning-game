@@ -113,8 +113,8 @@ function generateBass() {
 }
 
 function generateBoth() {
-	var bothClefs = [generateTreble, generateBass];
-	var i = getRandomInt(0, 1);
+	let bothClefs = [generateTreble, generateBass];
+	let i = getRandomInt(0, 1);
 	bothClefs[i]();
 }
 
@@ -392,6 +392,7 @@ $('.keyboard-keys > img').each(function () {
 //Footer Year
 year.text(new Date().getFullYear());
 
+//Random Number Generator
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
