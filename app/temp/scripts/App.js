@@ -413,7 +413,7 @@
 							'color': '#fafafa',
 							'background-color': 'steelblue'
 						});
-						$(this).siblings().css('opacity', '0').hide();
+						$(this).siblings().hide();
 						clefButtons.addClass('reg');
 						$('.task2').text('Correct!');
 					}

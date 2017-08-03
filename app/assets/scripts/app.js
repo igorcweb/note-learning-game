@@ -1,28 +1,28 @@
 "use strict"
 
 let $ = require("jquery"),
-note = "",
-imgSrc = "",
-reg = 0,
-noteNumber = 0,
-notes = ["C", "D", "E", "F", "G", "A", "B",],
-trebleButton = $(".treble"),
-bassButton = $(".bass"),
-bothButton = $(".both"),
-easyButton = $("#easy"),
-mediumButton = $("#medium"),
-hardButton = $("#hard"),
-noteButton = $(".note-button > .button__task"),
-regButton = $(".reg-button > .button__task"),
-clefButtons = $(".button__mode--clef"),
-score = 0,
-scoreDisplay = $('h1 span#score'),
-noteTrack = [],
-maxNotes = 0,
-counter = 0,
-hamburger = $('.hamburger'),
-cross = $('.cross'),
-year = $('footer p span.year');
+	note = "",
+	imgSrc = "",
+	reg = 0,
+	noteNumber = 0,
+	notes = ["C", "D", "E", "F", "G", "A", "B",],
+	trebleButton = $(".treble"),
+	bassButton = $(".bass"),
+	bothButton = $(".both"),
+	easyButton = $("#easy"),
+	mediumButton = $("#medium"),
+	hardButton = $("#hard"),
+	noteButton = $(".note-button > .button__task"),
+	regButton = $(".reg-button > .button__task"),
+	clefButtons = $(".button__mode--clef"),
+	score = 0,
+	scoreDisplay = $('h1 span#score'),
+	noteTrack = [],
+	maxNotes = 0,
+	counter = 0,
+	hamburger = $('.hamburger'),
+	cross = $('.cross'),
+	year = $('footer p span.year');
 
 generateTreble();
 
@@ -109,7 +109,6 @@ function generateBass() {
 		imgSrc = "assets/images/" + "b" + note + ".jpg";
 		$('.notes').attr('src', imgSrc);
 		noteTrack.push(note);
-
 	}
 }
 
@@ -326,7 +325,7 @@ $('.one-octave > img').each(function () {
 						'color': '#fafafa',
 						'background-color': 'steelblue'
 					});
-					$(this).siblings().css('opacity', '0').hide();
+					$(this).siblings().hide();
 					clefButtons.addClass('note');
 					$('.task1').text('Correct!');
 					$('.task4').text('Correct!');
@@ -343,7 +342,6 @@ $('.one-octave > img').each(function () {
 		}
 	});
 });
-
 
 $('.keyboard-keys > img').each(function () {
 	$(this).on('click', function () {
@@ -369,7 +367,7 @@ $('.keyboard-keys > img').each(function () {
 						'color': '#fafafa',
 						'background-color': 'steelblue'
 					});
-					$(this).siblings().css('opacity', '0').hide();
+					$(this).siblings().hide();
 					clefButtons.addClass('note');
 					$('.task1').text('Correct!');
 				}
@@ -381,7 +379,7 @@ $('.keyboard-keys > img').each(function () {
 						'color': '#fafafa',
 						'background-color': 'steelblue'
 					});
-					$(this).siblings().css('opacity', '0').hide();
+					$(this).siblings().hide();
 					clefButtons.addClass('reg');
 					$('.task2').text('Correct!');
 
