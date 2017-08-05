@@ -158,9 +158,17 @@
 		}
 	}
 
+	var count = 0;
+
 	function generateBoth() {
 		var bothClefs = [generateTreble, generateBass];
-		var i = getRandomInt(0, 1);
+		count++;
+		var i = void 0;
+		if (count % 2 === 0) {
+			i = 0;
+		} else {
+			i = 1;
+		}
 		bothClefs[i]();
 	}
 
