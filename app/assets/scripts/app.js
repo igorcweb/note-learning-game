@@ -251,7 +251,6 @@ $('.level').on('click', '#hard', function () {
 
 function win() {
 	if (trebleButton.is('.selected.note.reg')) {
-		console.log(true);
 		score += 1;
 		scoreDisplay.text(" " + score);
 		setTimeout(generateTreble, 2000);
