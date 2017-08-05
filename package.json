@@ -29,5 +29,8 @@
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^1.2.0",
     "webpack": "^1.13.1"
+  }, 
+  "scripts": {
+    "start": "gulp watch"
   }
 }

@@ -112,9 +112,17 @@ function generateBass() {
 	}
 }
 
+let count = 0;
+
 function generateBoth() {
 	let bothClefs = [generateTreble, generateBass];
-	let i = getRandomInt(0, 1);
+	count++;
+	let i;
+	if (count % 2 === 0) {
+		i = 0;
+	} else {
+		i = 1;
+	}
 	bothClefs[i]();
 }
 
@@ -243,7 +251,7 @@ $('.level').on('click', '#hard', function () {
 
 function win() {
 	if (trebleButton.is('.selected.note.reg')) {
-		console.log(true);	
+		console.log(true);
 		score += 1;
 		scoreDisplay.text(" " + score);
 		setTimeout(generateTreble, 2000);
