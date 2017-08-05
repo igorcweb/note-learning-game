@@ -113,7 +113,6 @@ function generateBass() {
 }
 
 let count = 0;
-
 function generateBoth() {
 	let bothClefs = [generateTreble, generateBass];
 	count++;
