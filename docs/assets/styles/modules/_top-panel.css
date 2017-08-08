@@ -10,7 +10,7 @@
 	margin: 0;
 	padding: .4rem .6rem;
 	font-size: 110%;
-	letter-spacing: 2px;
+	letter-spacing: 1.5px;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
 		@mixin atSmall {
@@ -18,13 +18,11 @@
 			text-align: center;
 			font-size: 140%;
 			padding: .5rem 0;
-			letter-spacing: 2px;
 			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 		}
 
 		@mixin atMedium {
 			font-size: 170%;
-			letter-spacing: 2px;
 			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 	}
 }
@@ -55,7 +53,7 @@
 	}	
 }
 
-.button__info {
+.button__info, .button__back {
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -63,7 +61,6 @@
 			top: 2.375rem;
 			text-align: center;
 			visibility: hidden;
-			/*border-radius: 15%;*/
 			background-color: #B4BFBF;
 			font-weight: 300;
 			font-size: 90%;
@@ -108,6 +105,35 @@
 		@mixin atLarge {
 			
 		}	
+	}
+
+	.button__back {
+		width: 10.5rem;
+		visibility: visible !important;
+		background: steelblue;
+		border: 2px solid #B4BFBF;
+		font-size: 80%;
+		letter-spacing: 1px;
+		 padding-bottom: 2px; 
+		width: 8rem;
+		left: .2rem;
+		top: .3rem;
+		margin:0;
+		a {
+			color: #fff;
+		}
+		@mixin atSmall {
+			font-size: 85%;			
+			width: 8.5rem;
+			left: 4%;
+			top: .4rem;
+		}
+		@mixin atMedium {
+			font-size: 100%;
+			width: 10rem;
+			top: .55rem;
+			padding-top: 3px;
+		}
 	}
 
 

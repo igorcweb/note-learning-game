@@ -1,7 +1,39 @@
-.construction {
-	font-weight: normal;
-	display: block;
-	text-align: center;
+div.info-wrapper {
+	max-width: 92%; 
+	margin: -23px auto; 
+	background-color: #fff;
+	padding-top: 0;
+	color: #555;
+	
+}
+
+.info.heading {
+	text-align: right;
+	padding: .4rem .4rem;
+	 font-size: 110%; 
+
+	@mixin atSmall {
+		font-size: 130%;
+		padding-right: 5rem;
+	}
+
+	@mixin atMedium {
+		text-align: center;
+		padding-right: 0;
+		font-size: 170%;
+	}
+}
+
+article {
+	margin: 0 3%;
+	letter-spacing: .5px;
+	font-size: 105%;
+		h1 {
+			font-size: 130%;
+			color: steelblue;
+			padding-top: 1.5em;
+		} 
+
 }
 .treble-staff, .bass-staff {
 	display: block;
@@ -27,4 +59,11 @@
 	width: 85%;
 	margin: 0 auto;
 
+}
+
+footer p#info {
+position: static;
+text-align: center;
+padding: 1.5%;
+background-color: $bgcolor;
 }

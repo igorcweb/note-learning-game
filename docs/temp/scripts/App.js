@@ -74,12 +74,12 @@
 
 	function generateTreble() {
 		noteButton.show().css({
-			'color': 'inherit',
-			'background-color': '#B4BFBF'
+			color: "inherit",
+			"background-color": 'rgba(180, 191, 191, 0.9)'
 		});
 		regButton.show().css({
-			'color': 'inherit',
-			'background-color': '#B4BFBF'
+			color: "inherit",
+			"background-color": 'rgba(180, 191, 191, .9)'
 		});
 		$('.task1').text('Pick a Note:');
 		$('.task2').text('Pick a Register:');
@@ -117,12 +117,12 @@
 
 	function generateBass() {
 		noteButton.show().css({
-			'color': 'inherit',
-			'background-color': '#B4BFBF'
+			color: "inherit",
+			"background-color": 'rgba(180, 191, 191, .9)'
 		});
 		regButton.show().css({
-			'color': 'inherit',
-			'background-color': '#B4BFBF'
+			color: "inherit",
+			"background-color": 'rgba(180, 191, 191, 0.9)'
 		});
 		$('.task1').text('Pick a Note:');
 		$('.task2').text('Pick a Register:');
@@ -159,7 +159,6 @@
 	}
 
 	var count = 0;
-
 	function generateBoth() {
 		var bothClefs = [generateTreble, generateBass];
 		count++;
@@ -288,7 +287,6 @@
 
 	function win() {
 		if (trebleButton.is('.selected.note.reg')) {
-			console.log(true);
 			score += 1;
 			scoreDisplay.text(" " + score);
 			setTimeout(generateTreble, 2000);

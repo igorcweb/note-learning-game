@@ -421,13 +421,14 @@ textarea {
   font: inherit; /* 2 */
 }
 
-/*$bgcolor: #e6e6fa;
-*/
-
 body {
 	background-color: #e9ebee;
 	font-family: 'Roboto', sans-serif;
-	color: #333; 
+	color: #444; 
+}
+
+h1 {
+	font-weight: normal;
 }
 
 div.warning-message {
@@ -506,7 +507,7 @@ div.warning-message {
 }
 
 .button {
-	background-color: #B4BFBF;
+	background-color: rgba(180, 191, 191, .9);
 	text-align: center;
 	border-radius: 15%;
 	transition: .2s ease-out;
@@ -558,7 +559,7 @@ div.warning-message {
 .button__mode {
   display: block;
   visibility: hidden;
-  background-color: #B4BFBF;
+  background-color: rgba(180, 191, 191, .9);
   letter-spacing: 1px;
   font-size: 85%;
   width: 3.85rem;
@@ -600,7 +601,7 @@ div.warning-message {
   .button__mode {
     display: block;
     visibility: visible !important;
-    background-color: #B4BFBF;
+    background-color: rgba(180, 191, 191, .9);
     /: 1px;
     font-size: 105%;
     width: 5rem;
@@ -679,13 +680,12 @@ footer p {
 	display: block;
 	font-size: 65%;
 	font-size: 65%;
-	color: gray;
+	color: #888;
 	clear: both;
 	padding:0;
 	position: absolute;
 	top: 97vh;
 	left: 50%;
-	width: 94px;
 	margin-left: -47px;	
 }
 
@@ -693,7 +693,6 @@ footer p {
 
   footer p {
     font-size: 70%;
-    width: 102px;
     margin-left: -51px;
   }
 }
@@ -701,7 +700,6 @@ footer p {
 @media (min-width: 800px) {
 
   footer p {
-    width: 108px;
     margin-left: -54px;
     font-size: 75%;
   }
@@ -741,7 +739,7 @@ footer p {
 	margin: 0;
 	padding: .4rem .6rem;
 	font-size: 110%;
-	letter-spacing: 2px;
+	letter-spacing: 1.5px;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -752,7 +750,6 @@ footer p {
     text-align: center;
     font-size: 140%;
     padding: .5rem 0;
-    letter-spacing: 2px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   }
 }
@@ -761,7 +758,6 @@ footer p {
 
   .heading {
     font-size: 170%;
-    letter-spacing: 2px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   }
 }
@@ -798,7 +794,7 @@ footer p {
   }
 }
 
-.button__info {
+.button__info, .button__back {
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -806,7 +802,6 @@ footer p {
 			top: 2.375rem;
 			text-align: center;
 			visibility: hidden;
-			/*border-radius: 15%;*/
 			background-color: #B4BFBF;
 			font-weight: 300;
 			font-size: 90%;
@@ -818,14 +813,14 @@ footer p {
 			z-index: 10;	
 	}
 
-.button__info a {
+.button__info a, .button__back a {
   text-decoration: none;
   color: #333;
 }
 
 @media (min-width: 530px) {
 
-  .button__info {
+  .button__info, .button__back {
     visibility: visible !important;
     background: steelblue;
     border: 2px solid #B4BFBF;
@@ -838,14 +833,14 @@ footer p {
     margin: 0;
   }
 
-  .button__info a {
+  .button__info a, .button__back a {
     color: #fff;
   }
 }
 
 @media (min-width: 800px) {
 
-  .button__info {
+  .button__info, .button__back {
     width: 6.125rem;
     letter-spacing: 2px;
     padding: 2px;
@@ -855,6 +850,44 @@ footer p {
 }
 
 @media (min-width: 1010px) {}
+
+.button__back {
+		width: 10.5rem;
+		visibility: visible !important;
+		background: steelblue;
+		border: 2px solid #B4BFBF;
+		font-size: 80%;
+		letter-spacing: 1px;
+		 padding-bottom: 2px; 
+		width: 8rem;
+		left: .2rem;
+		top: .3rem;
+		margin:0;
+	}
+
+.button__back a {
+  color: #fff;
+}
+
+@media (min-width: 530px) {
+
+  .button__back {
+    font-size: 85%;
+    width: 8.5rem;
+    left: 4%;
+    top: .4rem;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .button__back {
+    font-size: 100%;
+    width: 10rem;
+    top: .55rem;
+    padding-top: 3px;
+  }
+}
 
 .keyboard-keys {
 	display: none;	
@@ -1043,10 +1076,49 @@ footer p {
   }
 }
 
-.construction {
-	font-weight: normal;
-	display: block;
-	text-align: center;
+div.info-wrapper {
+	max-width: 92%; 
+	margin: -23px auto; 
+	background-color: #fff;
+	padding-top: 0;
+	color: #555;
+	
+}
+
+.info.heading {
+	text-align: right;
+	padding: .4rem .4rem;
+	 font-size: 110%;
+}
+
+@media (min-width: 530px) {
+
+  .info.heading {
+    font-size: 130%;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .info.heading {
+    text-align: center;
+    padding-right: 0;
+    font-size: 170%;
+  }
+}
+
+article {
+	margin: 0 3%;
+	letter-spacing: .5px;
+	font-size: 105%; 
+
+}
+
+article h1 {
+  font-size: 130%;
+  color: steelblue;
+  padding-top: 1.5em;
 }
 
 .treble-staff, .bass-staff {
@@ -1072,6 +1144,13 @@ footer p {
 	width: 85%;
 	margin: 0 auto;
 
+}
+
+footer p#info {
+position: static;
+text-align: center;
+padding: 1.5%;
+background-color: #e9ebee;
 }
 
 
