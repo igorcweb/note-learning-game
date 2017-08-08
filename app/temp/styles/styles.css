@@ -430,6 +430,10 @@ body {
 	color: #444; 
 }
 
+h1 {
+	font-weight: normal;
+}
+
 div.warning-message {
 	display: none;
 }
@@ -679,13 +683,12 @@ footer p {
 	display: block;
 	font-size: 65%;
 	font-size: 65%;
-	color: gray;
+	color: #888;
 	clear: both;
 	padding:0;
 	position: absolute;
 	top: 97vh;
 	left: 50%;
-	width: 94px;
 	margin-left: -47px;	
 }
 
@@ -693,7 +696,6 @@ footer p {
 
   footer p {
     font-size: 70%;
-    width: 102px;
     margin-left: -51px;
   }
 }
@@ -701,7 +703,6 @@ footer p {
 @media (min-width: 800px) {
 
   footer p {
-    width: 108px;
     margin-left: -54px;
     font-size: 75%;
   }
@@ -862,7 +863,7 @@ footer p {
 		border: 2px solid #B4BFBF;
 		font-size: 80%;
 		letter-spacing: 1px;
-		padding-bottom: 2px;
+		 padding-bottom: 2px; 
 		width: 8rem;
 		left: .2rem;
 		top: .3rem;
@@ -888,7 +889,8 @@ footer p {
   .button__back {
     font-size: 100%;
     width: 10rem;
-    top: .6rem;
+    top: .55rem;
+    padding-top: 3px;
   }
 }
 
@@ -1079,12 +1081,13 @@ footer p {
   }
 }
 
-article {
-	 max-width: 92%; 
-	margin: -21px auto; 
+div.info-wrapper {
+	max-width: 92%; 
+	margin: -23px auto; 
 	background-color: #fff;
 	padding-top: 0;
-	color: #777;
+	color: #555;
+	
 }
 
 .info.heading {
@@ -1110,10 +1113,17 @@ article {
   }
 }
 
-.construction {
-	font-weight: normal;
-	display: block;
-	text-align: center;
+article {
+	margin: 0 3%;
+	letter-spacing: 1px;
+	font-size: 110%; 
+
+}
+
+article h1 {
+  font-size: 130%;
+  color: steelblue;
+  padding-top: 1.5em;
 }
 
 .treble-staff, .bass-staff {
@@ -1139,6 +1149,13 @@ article {
 	width: 85%;
 	margin: 0 auto;
 
+}
+
+footer p#info {
+position: static;
+text-align: center;
+padding: 1.5%;
+background-color: #e9ebee;
 }
 
 

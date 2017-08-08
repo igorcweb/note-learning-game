@@ -4,6 +4,10 @@ body {
 	color: #444; 
 }
 
+h1 {
+	font-weight: normal;
+}
+
 div.warning-message {
 	display: none;
 }

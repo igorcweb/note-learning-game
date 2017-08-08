@@ -3,23 +3,20 @@ footer p {
 	display: block;
 	font-size: 65%;
 	font-size: 65%;
-	color: gray;
+	color: #888;
 	clear: both;
 	padding:0;
 	position: absolute;
 	top: 97vh;
 	left: 50%;
-	width: 94px;
 	margin-left: -47px;
 	
 	@mixin atSmall {
 		font-size: 70%;
-		width: 102px;
 		margin-left: -51px;
 	}
 
 	@mixin atMedium {
-		width: 108px;
 		margin-left: -54px;
 		font-size: 75%;
 	}	
