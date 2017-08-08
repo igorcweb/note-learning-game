@@ -845,11 +845,9 @@ footer p {
     letter-spacing: 2px;
     padding: 2px;
     left: 2rem;
-    top: .625rem;
+    top: .7rem;
   }
 }
-
-@media (min-width: 1010px) {}
 
 .button__back {
 		width: 10.5rem;
@@ -875,7 +873,7 @@ footer p {
     font-size: 85%;
     width: 8.5rem;
     left: 4%;
-    top: .4rem;
+    top: .45rem;
   }
 }
 
@@ -884,7 +882,7 @@ footer p {
   .button__back {
     font-size: 100%;
     width: 10rem;
-    top: .55rem;
+    top: .7rem;
     padding-top: 3px;
   }
 }
@@ -897,7 +895,6 @@ footer p {
 
   .keyboard-keys {
     display: block;
-    float: left;
     width: 98%;
     position: absolute;
     bottom: 19vh;
@@ -910,7 +907,6 @@ footer p {
 
   .keyboard-keys {
     display: block;
-    float: left;
     width: 97%;
     left: 1.5%;
   }
@@ -1087,7 +1083,7 @@ div.info-wrapper {
 
 .info.heading {
 	text-align: right;
-	padding: .4rem .4rem;
+	padding: .5rem .4rem;
 	 font-size: 110%;
 }
 
@@ -1121,7 +1117,14 @@ article h1 {
   padding-top: 1.5em;
 }
 
-.treble-staff, .bass-staff {
+.treble-staff {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+
+}
+
+.bass-staff {
 	display: block;
 	width: 50%;
 	margin: 0 auto;
@@ -1129,7 +1132,8 @@ article h1 {
 
 .note-names {
 	display: block;
-	width: 10rem;
+	height: 9rem;
+	width: 9rem;
 	margin: 0 auto;
 }
 

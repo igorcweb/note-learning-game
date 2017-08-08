@@ -9,7 +9,7 @@ div.info-wrapper {
 
 .info.heading {
 	text-align: right;
-	padding: .4rem .4rem;
+	padding: .5rem .4rem;
 	 font-size: 110%; 
 
 	@mixin atSmall {
@@ -35,16 +35,24 @@ article {
 		} 
 
 }
-.treble-staff, .bass-staff {
+
+.treble-staff {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+
+}
+
+.bass-staff {
 	display: block;
 	width: 50%;
 	margin: 0 auto;
 }
 
-
 .note-names {
 	display: block;
-	width: 10rem;
+	height: 9rem;
+	width: 9rem;
 	margin: 0 auto;
 }
 

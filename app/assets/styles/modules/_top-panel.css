@@ -100,11 +100,8 @@
 			letter-spacing: 2px;			
 			padding: 2px;
 			left: 2rem;
-			top: .625rem;
-			}
-		@mixin atLarge {
-			
-		}	
+			top: .7rem;
+			}	
 	}
 
 	.button__back {
@@ -126,12 +123,12 @@
 			font-size: 85%;			
 			width: 8.5rem;
 			left: 4%;
-			top: .4rem;
+			top: .45rem;
 		}
 		@mixin atMedium {
 			font-size: 100%;
 			width: 10rem;
-			top: .55rem;
+			top: .7rem;
 			padding-top: 3px;
 		}
 	}
