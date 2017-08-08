@@ -421,9 +421,6 @@ textarea {
   font: inherit; /* 2 */
 }
 
-/*$bgcolor: #e6e6fa;
-*/
-
 body {
 	background-color: #e9ebee;
 	font-family: 'Roboto', sans-serif;
@@ -510,7 +507,7 @@ div.warning-message {
 }
 
 .button {
-	background-color: #B4BFBF;
+	background-color: rgba(180, 191, 191, .9);
 	text-align: center;
 	border-radius: 15%;
 	transition: .2s ease-out;
@@ -562,7 +559,7 @@ div.warning-message {
 .button__mode {
   display: block;
   visibility: hidden;
-  background-color: #B4BFBF;
+  background-color: rgba(180, 191, 191, .9);
   letter-spacing: 1px;
   font-size: 85%;
   width: 3.85rem;
@@ -604,7 +601,7 @@ div.warning-message {
   .button__mode {
     display: block;
     visibility: visible !important;
-    background-color: #B4BFBF;
+    background-color: rgba(180, 191, 191, .9);
     /: 1px;
     font-size: 105%;
     width: 5rem;
@@ -1115,8 +1112,8 @@ div.info-wrapper {
 
 article {
 	margin: 0 3%;
-	letter-spacing: 1px;
-	font-size: 110%; 
+	letter-spacing: .5px;
+	font-size: 105%; 
 
 }
 

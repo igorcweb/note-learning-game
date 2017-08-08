@@ -26,8 +26,8 @@ div.info-wrapper {
 
 article {
 	margin: 0 3%;
-	letter-spacing: 1px;
-	font-size: 110%;
+	letter-spacing: .5px;
+	font-size: 105%;
 		h1 {
 			font-size: 130%;
 			color: steelblue;

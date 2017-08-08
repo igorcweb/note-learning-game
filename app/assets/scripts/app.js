@@ -27,14 +27,18 @@ let $ = require("jquery"),
 generateTreble();
 
 function generateTreble() {
-	noteButton.show().css({
-		'color': 'inherit',
-		'background-color': '#B4BFBF'
-	});
-	regButton.show().css({
-		'color': 'inherit',
-		'background-color': '#B4BFBF'
-	});
+	noteButton
+    .show()
+    .css({
+      color: "inherit",
+      "background-color": 'rgba(180, 191, 191, 0.9)'
+    });
+	regButton
+    .show()
+    .css({
+      color: "inherit",
+      "background-color": 'rgba(180, 191, 191, .9)'
+    });
 	$('.task1').text('Pick a Note:');
 	$('.task2').text('Pick a Register:');
 	$('.task3').text('or Pick a Key:');
@@ -70,14 +74,18 @@ function generateTreble() {
 }
 
 function generateBass() {
-	noteButton.show().css({
-		'color': 'inherit',
-		'background-color': '#B4BFBF'
-	});
-	regButton.show().css({
-		'color': 'inherit',
-		'background-color': '#B4BFBF'
-	});
+	noteButton
+    .show()
+    .css({
+      color: "inherit",
+      "background-color": 'rgba(180, 191, 191, .9)'
+    });
+	regButton
+    .show()
+    .css({
+      color: "inherit",
+      "background-color": 'rgba(180, 191, 191, 0.9)'
+    });
 	$('.task1').text('Pick a Note:');
 	$('.task2').text('Pick a Register:');
 	$('.task3').text('or Pick a Key:');
