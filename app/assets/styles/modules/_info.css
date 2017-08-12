@@ -9,25 +9,26 @@ div.info-wrapper {
 
 .info.heading {
 	text-align: right;
-	padding: .5rem .4rem;
-	 font-size: 110%; 
+	padding: .5rem 1rem;
+	 font-size: 100%; 
 
 	@mixin atSmall {
-		font-size: 130%;
-		padding-right: 5rem;
+		font-size: 110%;
+		padding-left: 3em;
+		text-align: center;
 	}
 
 	@mixin atMedium {
 		text-align: center;
-		padding-right: 0;
-		font-size: 170%;
+		font-size: 160%;
+		padding: .5rem 0;
 	}
 }
 
 article {
 	margin: 0 3%;
-	letter-spacing: .5px;
-	font-size: 105%;
+	letter-spacing: 1px;
+	font-size: 108%;
 		h1 {
 			font-size: 130%;
 			color: steelblue;
@@ -39,14 +40,19 @@ article {
 .treble-staff {
 	display: block;
 	width: 50%;
-	margin: 0 auto;
+	float: right;
+	margin: 0 7px 7px 7px;
 
 }
 
+
+
 .bass-staff {
 	display: block;
+	float: right;
 	width: 50%;
-	margin: 0 auto;
+	margin-top: -1rem;
+
 }
 
 .note-names {
@@ -66,7 +72,6 @@ article {
 	display: block;
 	width: 85%;
 	margin: 0 auto;
-
 }
 
 footer p#info {

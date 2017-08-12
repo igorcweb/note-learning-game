@@ -61,7 +61,7 @@
 			top: 2.375rem;
 			text-align: center;
 			visibility: hidden;
-			background-color: #B4BFBF;
+			background-color: rgba(180, 191, 191, .9);
 			font-weight: 300;
 			font-size: 90%;
 			width: 5.125rem;
@@ -81,7 +81,7 @@
 		@mixin atSmall {
 			visibility: visible !important;
 			background: steelblue;
-			border: 2px solid #B4BFBF;
+			border: 2px solid rgba(180, 191, 191, .9);
 			font-size: 95%;			
 			letter-spacing: 1px;
 			padding-bottom: 2px;
@@ -108,30 +108,63 @@
 		width: 10.5rem;
 		visibility: visible !important;
 		background: steelblue;
-		border: 2px solid #B4BFBF;
+		border: 2px solid rgba(180, 191, 191, .9);
 		font-size: 80%;
 		letter-spacing: 1px;
 		 padding-bottom: 2px; 
 		width: 8rem;
-		left: .2rem;
+		left: 4%;
 		top: .3rem;
 		margin:0;
-		a {
-			color: #fff;
-		}
+		
+			a {
+				color: #fff;
+			}
 		@mixin atSmall {
 			font-size: 85%;			
 			width: 8.5rem;
 			left: 4%;
-			top: .45rem;
+			top: .4rem;
 		}
 		@mixin atMedium {
 			font-size: 100%;
 			width: 10rem;
-			top: .7rem;
+			top: .6rem;
 			padding-top: 3px;
 		}
 	}
+
+.button__email {
+	position: absolute;
+	background: steelblue;
+	border: 2px solid rgba(180, 191, 191, .9);
+	font-size: 80%;
+	font-weight: 300;
+	letter-spacing: 1px;
+	padding: 2px 0; 
+	width: 6rem;
+	top: 3rem;
+	right: 6%;
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+	
+	@mixin atSmall {
+		font-size: 85%;
+		width: 6.2rem;
+		right: 4%;
+		top: .4rem
+	}
+	@mixin atMedium {
+		right: 4%;
+		top: .6rem;
+		line-height: 1rem;
+		padding-top: 3px;
+		font-size: 100%;
+		width: 7.2rem;
+	}
+}
 
 
 
