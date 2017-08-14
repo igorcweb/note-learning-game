@@ -9,12 +9,12 @@ div.info-wrapper {
 
 .info.heading {
 	text-align: right;
-	padding: .5rem 1rem;
-	 font-size: 100%; 
+	padding: .5rem .5rem;
+	 font-size: 112%; 
 
 	@mixin atSmall {
-		font-size: 110%;
-		padding-left: 3em;
+		font-size: 115%;
+		padding-left: 2.6em;
 		text-align: center;
 	}
 

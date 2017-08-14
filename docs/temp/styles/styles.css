@@ -858,8 +858,8 @@ footer p {
 		letter-spacing: 1px;
 		 padding-bottom: 2px; 
 		width: 8rem;
-		left: 4%;
-		top: .3rem;
+		left: .5rem;
+		top: .4rem;
 		margin:0;
 	}
 
@@ -1123,15 +1123,15 @@ div.info-wrapper {
 
 .info.heading {
 	text-align: right;
-	padding: .5rem 1rem;
-	 font-size: 100%;
+	padding: .5rem .5rem;
+	 font-size: 112%;
 }
 
 @media (min-width: 530px) {
 
   .info.heading {
-    font-size: 110%;
-    padding-left: 3em;
+    font-size: 115%;
+    padding-left: 2.6em;
     text-align: center;
   }
 }
