@@ -74,6 +74,10 @@ article {
 	margin: 0 auto;
 }
 
+.ledger-treble, .ledger-bass {
+	width: 80%;
+}
+
 footer p#info {
 position: static;
 text-align: center;
