@@ -39,9 +39,9 @@ article {
 
 .treble-staff {
 	display: block;
-	width: 50%;
+	width: 48%;
 	float: right;
-	margin: 0 7px 7px 7px;
+	margin: -8px 7px 20px 20px;
 
 }
 
@@ -50,8 +50,8 @@ article {
 .bass-staff {
 	display: block;
 	float: right;
-	width: 50%;
-	margin-top: -1rem;
+	width: 48%;
+	margin: 0 0 20px 20px;
 
 }
 
@@ -75,7 +75,9 @@ article {
 }
 
 .ledger-treble, .ledger-bass {
-	width: 80%;
+	width: 75%;
+	display: block;
+	margin: 0 auto;
 }
 
 footer p#info {

@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: $bgcolor;
 	font-family: 'Roboto', sans-serif;
@@ -26,17 +30,10 @@ div.warning-message {
 		display: block;
 		text-align: center;
 		margin-top: 40vh;
-	}
-
+		}
+	}	
 }
 
-	
-}
-
-* {
-  box-sizing: border-box;
-
-}
 
 
 
