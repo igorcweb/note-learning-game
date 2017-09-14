@@ -1045,6 +1045,7 @@ footer p {
 .task4 {
 	position: absolute;
 	top: 32%;
+	left: -3px;
 	line-height: 145%;
 }
 
@@ -1191,7 +1192,7 @@ article h1 {
 }
 
 .ledger-treble, .ledger-bass {
-	width: 80%;
+	width: 75%;
 	display: block;
 	margin: 0 auto;
 }
