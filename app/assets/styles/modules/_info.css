@@ -27,7 +27,7 @@ div.info-wrapper {
 
 article {
 	margin: 0 3%;
-	letter-spacing: 1px;
+	letter-spacing: .5px;
 	font-size: 108%;
 		h1 {
 			font-size: 130%;
@@ -40,18 +40,27 @@ article {
 .treble-staff {
 	display: block;
 	width: 48%;
+	min-width: 350px;
 	float: right;
-	margin: -8px 7px 20px 20px;
+	margin: -8px 0px 20px 20px;
 
+	@mixin atSmall {
+		margin-right: 7px;
+		min-width: 400px;
+	}
 }
-
-
 
 .bass-staff {
 	display: block;
 	float: right;
 	width: 48%;
-	margin: 0 0 20px 20px;
+	min-width: 350px;
+	margin: 0 0px 20px 20px;
+
+		@mixin atSmall {
+		margin-right: 7px;
+		min-width: 400px;
+	}
 
 }
 
@@ -65,17 +74,20 @@ article {
 .keyboard-registers {
 	display: block;
 	width: 95%;
+	min-width: 350px;
 	margin: 0 auto;
 }
 
 .staff-registers {
 	display: block;
 	width: 85%;
+	min-width: 350px;
 	margin: 0 auto;
 }
 
 .ledger-treble, .ledger-bass {
 	width: 75%;
+	min-width: 350px;
 	display: block;
 	margin: 0 auto;
 }
