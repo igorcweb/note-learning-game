@@ -504,6 +504,7 @@ div.warning-message {
 }
 
 .button {
+	border: 1px solid #777;
 	background-color: rgba(180, 191, 191, .9);
 	text-align: center;
 	border-radius: 15%;
