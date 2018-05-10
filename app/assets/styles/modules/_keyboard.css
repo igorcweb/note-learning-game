@@ -79,11 +79,6 @@
 		bottom: .1rem;
 		left: -.5625rem;
 	}
-
-	@mixin atLarge {
-		bottom: .1rem;
-		left: -.5625rem;
-	}	
 }
 
 .task4 {

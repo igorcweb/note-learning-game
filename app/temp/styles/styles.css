@@ -422,30 +422,28 @@ textarea {
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: #e9ebee;
-	font-family: 'Roboto', sans-serif;
-	color: #444; 
+  background-color: #e9ebee;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
 }
 
 h1 {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 div.warning-message {
-	display: none;
+  display: none;
 }
 
 .game {
-	overflow: hidden;	
+  overflow: hidden;
 }
 
-@media screen and (min-width: 320px) 
-		and (max-width: 740px) and (max-height: 600px) 
-		and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 740px) and (max-height: 600px) and (orientation: landscape) {
 
   .game div.wrapper {
     display: none;
@@ -1022,7 +1020,7 @@ footer p {
 }
 
 .task3 {
-	display: none;	
+	display: none;
 }
 
 @media (min-width: 800px) {
@@ -1030,14 +1028,6 @@ footer p {
   .task3 {
     display: block;
     position: absolute;
-    bottom: .1rem;
-    left: -.5625rem;
-  }
-}
-
-@media (min-width: 1010px) {
-
-  .task3 {
     bottom: .1rem;
     left: -.5625rem;
   }
